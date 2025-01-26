@@ -35,8 +35,11 @@ def count_alphabet(text):
         'z': 0,
         }
     lower_case_text = text.lower()
-    for letters in alphabet:
-        pass
+    for letter in lower_case_text:
+        if letter.isalpha():
+            alphabet[letter] += 1 
+    print("Final Dictionary:", alphabet)
+
 
 def main():
     print("Starting to Read...")
@@ -44,6 +47,7 @@ def main():
         file_contents = f.read()
         wordcount = count_words(file_contents)
         print(wordcount)
-        #print(file_contents)
+        count_alphabet(file_contents) 
+        #print(file_contents)     
 main()
 
