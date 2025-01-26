@@ -33,10 +33,11 @@ def count_alphabet(text):
         'x': 0,
         'y': 0,
         'z': 0,
+        ' ': 0,
         }
     lower_case_text = text.lower()
     for letter in lower_case_text:
-        if letter.isalpha():
+        if letter.isalpha() or letter == " ":
             alphabet[letter] += 1 
     print("Final Dictionary:", alphabet)
 
