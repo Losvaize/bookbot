@@ -5,7 +5,10 @@ def count_words(text):
         wordcount += 1
     return wordcount
 
+
+
 def count_alphabet(text):
+    ordered_alphabet = []
     alphabet = {
         "a" : 0,
         "b" : 0,
@@ -33,13 +36,20 @@ def count_alphabet(text):
         'x': 0,
         'y': 0,
         'z': 0,
-        ' ': 0,
         }
     lower_case_text = text.lower()
     for letter in lower_case_text:
-        if letter.isalpha() or letter == " ":
-            alphabet[letter] += 1 
-    print("Final Dictionary:", alphabet)
+        if letter.isalpha():
+            alphabet[letter] += 1
+    #print("Final Dictionary:", alphabet)
+    for char, count in alphabet.items():
+        let_dict = {"letter": char, "num": count}
+        ordered_alphabet.append(let_dict)
+    ordered_alphabet.sort()
+    print(ordered_alphabet)
+
+    
+#put new thing here dont forget to put stuff in main
 
 
 def main():
