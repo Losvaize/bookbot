@@ -5,7 +5,8 @@ def count_words(text):
         wordcount += 1
     return wordcount
 
-
+def sort_1(in_order_alphabet):
+    return in_order_alphabet["num"]
 
 def count_alphabet(text):
     ordered_alphabet = []
@@ -45,8 +46,11 @@ def count_alphabet(text):
     for char, count in alphabet.items():
         let_dict = {"letter": char, "num": count}
         ordered_alphabet.append(let_dict)
-    ordered_alphabet.sort()
-    print(ordered_alphabet)
+    
+    ordered_alphabet.sort(reverse= True, key=sort_1)
+    # Put Concatenation in here
+    # Put the str / int into here. 
+    return(ordered_alphabet)
 
     
 #put new thing here dont forget to put stuff in main
