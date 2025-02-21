@@ -47,12 +47,20 @@ def count_alphabet(text):
         let_dict = {"letter": char, "num": count}
         ordered_alphabet.append(let_dict)
     
-    ordered_alphabet.sort(reverse= True, key=sort_1)
-    # Put Concatenation in here
-    # Put the str / int into here. 
+    ordered_alphabet.sort(reverse=True, key=sort_1)
     return(ordered_alphabet)
 
-    
+
+def generate_report(ordered_alphabet, wordcount):
+    lines = []
+    lines.append ("Here is the report of Letters in frankenstein.")
+    lines.append(f"{wordcount} words found in the document")
+    for char_info in ordered_alphabet:
+        line = f"The '{char_info['letter']}' character appears {char_info['num']} times"
+        lines.append(line)
+    lines.append ("--- End of Report ---")
+    return "\n".join(lines)
+
 #put new thing here dont forget to put stuff in main
 
 
@@ -62,7 +70,10 @@ def main():
         file_contents = f.read()
         wordcount = count_words(file_contents)
         print(wordcount)
-        count_alphabet(file_contents) 
-        #print(file_contents)     
+        ordered_chars = count_alphabet(file_contents)
+        report = generate_report(ordered_chars, wordcount)
+        print(report)
+        count_alphabet(file_contents)
+        
 main()
 
